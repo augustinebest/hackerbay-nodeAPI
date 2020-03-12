@@ -2139,6 +2139,11 @@ json5@^2.1.0:
   dependencies:
     minimist "^1.2.0"
 
+jsonpatch@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/jsonpatch/-/jsonpatch-3.0.1.tgz#97225367c1c3c5bf1641be59b2f73be19759f06f"
+  integrity sha1-lyJTZ8HDxb8WQb5Zsvc74ZdZ8G8=
+
 jsonwebtoken@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
