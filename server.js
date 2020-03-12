@@ -1,9 +1,9 @@
-import express from 'express';
+import app from './api/app';
 
-const app = express();
-
-const PORT = 9000 || process.env.PORT;
+const PORT = 8000 || process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`server running on PORT:${PORT}`);
 })
+
+export default app;
