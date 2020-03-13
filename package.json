@@ -1,13 +1,17 @@
 {
   "name": "hackerbay",
   "version": "1.0.0",
-  "description": "",
+  "description": "hackerbay node API challenge",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon --exec babel-node ./node_modules/mocha/bin/mocha api/tests/authTest.spec.js --reporter spec",
-    "start": "nodemon --exec babel-node server.js"
+    "build": "babel api -d dist --copy-files",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register api/tests/authTest.spec.js",
+    "start": "npm run build && node  dist/server.js",
+    "dev": "nodemon --exec babel-node api/server.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint api/**/*.js"
   },
-  "author": "",
+  "author": "Augustine Igwe",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
@@ -27,12 +31,14 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/register": "^7.8.6",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.9",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "mocha": "^7.1.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0"
   }
 }
