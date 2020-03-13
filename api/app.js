@@ -12,5 +12,5 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
 // Using routes
-app.use('/auth', authRoutes);
+app.use('/api', authRoutes);
 export default app;

@@ -10,6 +10,16 @@ class AuthService {
             })
         })
     }
+    verifyUser(req, res, next) {
+        try {
+            const token = req.body.token || req.params.token || req.headers.authorization;
+            const decoded = jwt.verify(token, secret);
+            req.userData = decoded;
+            next();
+        } catch(error) {
+            res.json({message: 'Authentication failed!'})
+        }
+    }
 }
 
 export default new AuthService;
