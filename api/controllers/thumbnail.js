@@ -7,6 +7,7 @@ const dir = path.join(__dirname, '/../../thumbnails/');
 class Thumbnail {
     generateThumbnail(req, res) {
         const filename = req.query.imageUrl;
+        if(!filename) return res.status(404).send({err: 'image is required as a query'});
         axios({
             method: "get",
             url: filename,
@@ -19,7 +20,7 @@ class Thumbnail {
             const thumbnailPath = path.resolve(dir, `resize/thumb-${newName}-${w}x${h}.jpg`);
             writeImage.on('close', () => {
                 sharp(downloadImagePath).resize({ width: w, height: h }).toFile(thumbnailPath).then(re => {
-                    res.send(path.join(__dirname, `/../../thumbnails/resize/${newName}-${w}x${h}.jpg`))
+                    res.status(200).sendFile(path.join(__dirname, `/../../thumbnails/resize/thumb-${newName}-${w}x${h}.jpg`))
                 }).catch(err => console.log('error just happened', err))
             })
         });
