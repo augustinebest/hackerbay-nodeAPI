@@ -1,5 +1,7 @@
-node_modules
 dist
 .env
 .travis.yml
 testESLint.js
+.nyc_output
+coverage
+node_modules
