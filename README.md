@@ -110,7 +110,7 @@ Response: returns an image of size 50 x 50
 <b>Note: </b> checkout the documentation hosted on [postman](https://documenter.getpostman.com/view/4565934/SzS2wTHD?version=latest)
 
 ### Docker
-This project was dockerised on [docker hub](https://hub.docker.com/repository/docker/augustinebest/hackerbay-node-app), use the following command to run
+This project was dockerised on [docker hub](https://hub.docker.com/repository/docker/augustinebest/hackerbay-node-api), use the following command to run
 ```
 docker pull augustinebest/hackerbay-node-api
 docker run -p 127.0.0.1:3000:3000 --env secret=randomstring augustinebest/hackerbay-node-api 
